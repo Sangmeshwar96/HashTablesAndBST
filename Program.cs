@@ -31,6 +31,8 @@ namespace HashTables
             }
             myMapNode.Display();
             myMapNode.Frequency("paranoid");
+            myMapNode.RemoveElement("avoidable");
+            myMapNode.Display();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 namespace HashTable
 {
     //FindingFrequency of Paragraph
+    //Frequency Added
     public class MyMapNode<K, V>
     {
         public struct KeyValue<k, v>
@@ -65,6 +66,7 @@ namespace HashTable
             }
         }
 
+
         public int Frequency(V value)
         {
             int count = 0;
@@ -79,8 +81,28 @@ namespace HashTable
                     }
                 }
             }
-            Console.WriteLine("The frequency of " + value + " is: " + count);
+            Console.WriteLine("The frequency of " + value + "is : " + count);
             return count;
+        }
+
+
+        public void RemoveElement(V value)
+        {
+            foreach (var linkedList in items)
+            {
+                if (linkedList != null)
+                {
+                    foreach (var element in linkedList)
+                    {
+                        if (element.Value.Equals(value))
+                        {
+                            linkedList.Remove(element);
+                            break;
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
