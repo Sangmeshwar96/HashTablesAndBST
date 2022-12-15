@@ -73,5 +73,26 @@ namespace BinarySearchTree
         {
             Console.WriteLine("Size Of BST :" + " " + (1 + leftCount + rightCount));
         }
+        public void Search(T item)
+        {
+            T parentValue = this.nodeData;
+            int value = parentValue.CompareTo(item);
+            
+            if (value > 0)
+            {
+                if (this.leftTree.nodeData.Equals(item))
+                    Console.WriteLine("Found value");
+                else
+                    this.leftTree.Search(item);
+            }
+            else
+            {
+
+                if (this.rightTree.nodeData.Equals(item))
+                    Console.WriteLine("Found value");
+                else
+                    this.rightTree.Search(item);
+            }
+        }
     }
 }
